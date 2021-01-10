@@ -1,0 +1,27 @@
+Link: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/spinal-tap-case
+
+Question:
+Intermediate Algorithm Scripting: Spinal Tap Case
+Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+Passed
+spinalCase("This Is Spinal Tap") should return "this-is-spinal-tap".
+
+Passed
+spinalCase("thisIsSpinalTap") should return "this-is-spinal-tap".
+
+Passed
+spinalCase("The_Andy_Griffith_Show") should return "the-andy-griffith-show".
+
+Passed
+spinalCase("Teletubbies say Eh-oh") should return "teletubbies-say-eh-oh".
+
+Passed
+spinalCase("AllThe-small Things") should return "all-the-small-things".
+
+Solution:
+function spinalCase(str) {
+  return str.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/\s+|_+/g, "-").toLowerCase();
+}
+
+spinalCase('This Is Spinal Tap');
