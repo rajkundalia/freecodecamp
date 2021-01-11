@@ -1,0 +1,40 @@
+https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/missing-letters
+
+Question:
+Intermediate Algorithm Scripting: Missing letters
+
+Find the missing letter in the passed letter range and return it.
+
+If all letters are present in the range, return undefined.
+Passed
+
+fearNotLetter("abce") should return "d".
+Passed
+
+fearNotLetter("abcdefghjklmno") should return "i".
+Passed
+
+fearNotLetter("stvwx") should return "u".
+Passed
+
+fearNotLetter("bcdf") should return "e".
+Passed
+
+fearNotLetter("abcdefghijklmnopqrstuvwxyz") should return undefined.
+
+
+Solution:
+
+function fearNotLetter(str) {
+  var first = str.charCodeAt(0);
+  var last = str.charCodeAt(str.length - 1);
+  var missing;
+  for(let i = first; i < last; i++) {
+    if(str.indexOf(String.fromCharCode(i)) < 0) {
+      missing = String.fromCharCode(i);
+    }
+  }
+  return missing;
+}
+
+fearNotLetter("abce");
